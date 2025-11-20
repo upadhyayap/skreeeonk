@@ -22,7 +22,7 @@ jobs:
       run: go build -v ./...
     
     - name: 'Run endorctl'
-      uses: endorlabs/github-action@2dede55b12e5ecaaa259c64e13190a70946569ba # refs/containers
+      uses: endorlabs/github-action@main # refs/containers
       with:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"

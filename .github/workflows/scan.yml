@@ -33,3 +33,4 @@ jobs:
         log_level: "debug"
         pr: "false"
         scan_dependencies: "true"
+        enable-github-action-token: "false"

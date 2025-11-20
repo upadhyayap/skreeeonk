@@ -1,0 +1,34 @@
+name: endorctl container scan
+
+on:
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  endorctl-container-scan:
+    permissions:
+     id-token: write # This is required for requesting the JWT
+     contents: read  # This is required for actions/checkout
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
+
+    - name: Build
+      run: go build -v ./...
+    
+    - name: 'Run endorctl'
+      uses: endorlabs/github-action@2dede55b12e5ecaaa259c64e13190a70946569ba # refs/containers
+      with:
+        namespace: "anand-js"
+        api: "https://api.staging.endorlabs.com"
+        # enable_github_action_token: "true"
+        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
+        log_verbose: "true"
+        log_level: "debug"
+        scan_dependencies: "true"

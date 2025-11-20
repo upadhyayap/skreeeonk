@@ -27,8 +27,8 @@ jobs:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
         enable_github_action_token: "false"
-        api_key: "endr+qjoAiKf1mVHxGBjc"
-        api_secret: "endr+rqnNW1RJcwMDDL8g"
+        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
         log_verbose: "true"
         log_level: "debug"
         pr: "false"
@@ -40,8 +40,8 @@ jobs:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
         enable_github_action_token: "false"
-        api_key: "endr+qjoAiKf1mVHxGBjc"
-        api_secret: "endr+rqnNW1RJcwMDDL8g"
+        api_key: ${{ secrets.ENDOR_API_CREDENTIALS_KEY }}
+        api_secret: ${{ secrets.ENDOR_API_CREDENTIALS_SECRET }}
         scan_container: "true"
         image: "mongo:jammy"
         project_name: "mongo_container"

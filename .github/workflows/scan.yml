@@ -27,8 +27,9 @@ jobs:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
         # enable_github_action_token: "true"
-        api_key: endr+Lv611uERwtijcTAo
-        api_secret: endr+nPk74xfbEMvCzL-E
+        api_key: "endr+Lv611uERwtijcTAo"
+        api_secret: "endr+nPk74xfbEMvCzL-E"
         log_verbose: "true"
         log_level: "debug"
+        pr: "false"
         scan_dependencies: "true"

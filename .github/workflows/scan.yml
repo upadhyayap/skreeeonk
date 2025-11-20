@@ -26,10 +26,25 @@ jobs:
       with:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
-        enable_github_action_token: "false"
         api_key: "endr+qjoAiKf1mVHxGBjc"
         api_secret: "endr+rqnNW1RJcwMDDL8g"
         log_verbose: "true"
         log_level: "debug"
         pr: "false"
         scan_dependencies: "true"
+        
+    - name: 'Run endorctl container scan'
+      uses: endorlabs/github-action@2dede55b12e5ecaaa259c64e13190a70946569ba # refs/containers
+      with:
+        namespace: "anand-js"
+        api: "https://api.staging.endorlabs.com"
+        enable_github_action_token: "false"
+        api_key: "endr+qjoAiKf1mVHxGBjc"
+        api_secret: "endr+rqnNW1RJcwMDDL8g"
+        scan_container: "true"
+        image: "mongo:jammy"
+        project_name: "mongo_container"
+        # reset default parameters
+        scan_dependencies: "false"
+        pr: "false"
+        additional_args: "--bypass-host-check"

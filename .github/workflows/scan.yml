@@ -22,7 +22,7 @@ jobs:
       run: go build -v ./...
     
     - name: 'Run endorctl'
-      uses: endorlabs/github-action@2dede55b12e5ecaaa259c64e13190a70946569ba # refs/containers
+      uses: endorlabs/github-action@00454d7d5ab11b3deb5ec3c71e711d1e8cd0829e # refs/containers
       with:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
@@ -35,7 +35,7 @@ jobs:
         scan_dependencies: "true"
         
     - name: 'Run endorctl container scan'
-      uses: endorlabs/github-action@2dede55b12e5ecaaa259c64e13190a70946569ba # refs/containers
+      uses: endorlabs/github-action@00454d7d5ab11b3deb5ec3c71e711d1e8cd0829e # refs/containers
       with:
         namespace: "anand-js"
         api: "https://api.staging.endorlabs.com"
